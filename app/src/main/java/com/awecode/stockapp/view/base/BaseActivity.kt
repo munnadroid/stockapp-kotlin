@@ -13,11 +13,11 @@ import com.awecode.stockapp.R
 abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayout())
+        setContentView(layoutId)
 
     }
 
-    abstract fun getLayout(): Int
+    abstract val layoutId: Int
 
     fun changeFragment(fragment: Fragment, cleanStack: Boolean = false, addToBackStack: Boolean = true) {
         val ft = supportFragmentManager.beginTransaction()

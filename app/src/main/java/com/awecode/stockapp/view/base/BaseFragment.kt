@@ -14,10 +14,10 @@ import com.awecode.stockapp.R
 abstract class BaseFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(getLayout(), container, false)
+        return inflater?.inflate(layoutId, container, false)
     }
 
-    abstract fun getLayout(): Int
+    abstract val layoutId: Int
 
 
 }
