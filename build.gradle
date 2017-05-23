@@ -2,6 +2,8 @@
 
 buildscript {
     ext.kotlin_version = '1.1.2-4'
+    ext.anko_version = '0.9-beta1'
+    ext.supportLibVersion = '25.3.1'
     repositories {
         maven { url 'https://maven.google.com' }
         jcenter()
@@ -20,6 +22,7 @@ allprojects {
         jcenter()
         maven { url 'https://maven.google.com' }
         mavenCentral()
+        maven { url "http://dl.bintray.com/kotlin/kotlin-dev" }
     }
 }
 
