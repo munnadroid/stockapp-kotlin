@@ -5,7 +5,6 @@ import android.support.v4.view.ViewPager
 import com.awecode.stockapp.R
 import com.awecode.stockapp.util.view.ViewPagerAdapter
 import com.awecode.stockapp.view.base.BaseFragment
-import com.awecode.stockapp.view.home.market.indices.IndicesFragment
 import kotlinx.android.synthetic.main.fragment_market.*
 
 /**
@@ -51,14 +50,21 @@ class MarketFragment : BaseFragment() {
     private fun setupViewPager() {
         val pagerAdapter = ViewPagerAdapter(childFragmentManager)
 
-        pagerAdapter.addFragment(IndicesFragment.newInstance(), "Indices")
-        pagerAdapter.addFragment(IndicesFragment.newInstance(), "Stocks")
-        pagerAdapter.addFragment(IndicesFragment.newInstance(), "Commodities")
-        pagerAdapter.addFragment(IndicesFragment.newInstance(), "Forex")
+        pagerAdapter.addFragment(MarketRecyclerViewFragment.newInstance(MarketViewType.INDICES), "Indices")
+        pagerAdapter.addFragment(MarketRecyclerViewFragment.newInstance(MarketViewType.STOCKS), "Stocks")
+        pagerAdapter.addFragment(MarketRecyclerViewFragment.newInstance(MarketViewType.COMMODITIES), "Commodities")
+        pagerAdapter.addFragment(MarketRecyclerViewFragment.newInstance(MarketViewType.FOREX), "Forex")
+        pagerAdapter.addFragment(MarketRecyclerViewFragment.newInstance(MarketViewType.BONDS), "Bonds")
+        pagerAdapter.addFragment(MarketRecyclerViewFragment.newInstance(MarketViewType.ETFS), "ETFs")
 
         viewPager.adapter = pagerAdapter
         viewPager.addOnPageChangeListener(onPageChangeListener)
-        tabLayout.setupWithViewPager(viewPager)
+        bottomBtnTabLayout.setupWithViewPager(viewPager)
+
+    }
+
+    enum class MarketViewType {
+        INDICES, STOCKS, COMMODITIES, FOREX, BONDS, ETFS
 
     }
 

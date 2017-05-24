@@ -3,7 +3,9 @@ package com.awecode.stockapp
 import android.os.Bundle
 import com.awecode.stockapp.view.base.BaseActivity
 import com.awecode.stockapp.view.home.market.MarketFragment
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_home.*
+import org.jetbrains.anko.toast
 
 
 class MainActivity : BaseActivity() {
@@ -13,5 +15,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
         changeFragment(MarketFragment.newInstance(), true, false)
+        marketsButton.setOnClickListener({ toast("Button clicked") })
+
     }
 }
+

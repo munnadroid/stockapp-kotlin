@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,11 +10,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/tabLayout"
+        android:layout_above="@+id/bottomBtnTabLayout"
         android:orientation="vertical">
 
         <include
-            android:id="@+id/toolbar"
             layout="@layout/toolbar_home" />
 
         <FrameLayout
@@ -24,31 +24,40 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/tabLayout"
+        android:id="@+id/bottomBtnTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
         android:weightSum="4">
 
-        <Button
+        <!--<ImageView-->
+            <!---->
+           <!---->
+            <!--android:text="Markets" />-->
+
+
+        <ImageView
             android:id="@+id/marketsButton"
-            style="@style/home_bottom_tab_btn_theme"
-            android:text="Markets" />
+            style="@style/HomeBottomBtnStyle"
+            android:tint="@color/colorAccent"
+            app:srcCompat="@drawable/ic_graphic_eq_black_24dp"
+            android:scaleType="fitCenter" />
 
         <Button
             android:id="@+id/newsButton"
-            style="@style/home_bottom_tab_btn_theme"
+            style="@style/HomeBottomBtnStyle"
             android:text="News" />
 
         <Button
             android:id="@+id/calendarButton"
-            style="@style/home_bottom_tab_btn_theme"
+            style="@style/HomeBottomBtnStyle"
             android:text="Calendar" />
 
         <Button
             android:id="@+id/portfolioButton"
-            style="@style/home_bottom_tab_btn_theme"
+            style="@style/HomeBottomBtnStyle"
             android:text="Portfolio" />
     </LinearLayout>
 
