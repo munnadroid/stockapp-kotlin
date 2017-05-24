@@ -1,8 +1,10 @@
 package com.awecode.stockapp.view.base
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.awecode.stockapp.R
 
@@ -15,9 +17,15 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(layoutId)
 
+
     }
 
     abstract val layoutId: Int
+
+
+    fun get_color(colorId: Int): Int {
+        return ContextCompat.getColor(applicationContext, colorId)
+    }
 
     fun changeFragment(fragment: Fragment, cleanStack: Boolean = false, addToBackStack: Boolean = true) {
         val ft = supportFragmentManager.beginTransaction()
