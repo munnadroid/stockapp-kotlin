@@ -27,10 +27,11 @@ class MainActivity : BaseActivity() {
     private fun setupViewPager() {
         val pagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
-        pagerAdapter.addFragment(MarketFragment.newInstance(), "Market")
-        pagerAdapter.addFragment(NewsFragment.newInstance(), "News")
-        pagerAdapter.addFragment(NewsFragment.newInstance(), "Calendar")
-        pagerAdapter.addFragment(NewsFragment.newInstance(), "Portfolio")
+
+        pagerAdapter.addFragment(MarketFragment.newInstance(), getString(R.string.markets))
+        pagerAdapter.addFragment(NewsFragment.newInstance(), getString(R.string.news))
+        pagerAdapter.addFragment(NewsFragment.newInstance(), getString(R.string.calendar))
+        pagerAdapter.addFragment(NewsFragment.newInstance(), getString(R.string.portfolio))
 
 
         viewPager.adapter = pagerAdapter

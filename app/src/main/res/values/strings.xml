@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Stock App</string>
     <string name="markets">Markets</string>
+    <string name="news">News</string>
+    <string name="calendar">Calendar</string>
+    <string name="portfolio">Portfolio</string>
 </resources>
