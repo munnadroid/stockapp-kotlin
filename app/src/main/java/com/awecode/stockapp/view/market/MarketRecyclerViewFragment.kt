@@ -1,4 +1,4 @@
-package com.awecode.stockapp.view.home.market
+package com.awecode.stockapp.view.market
 
 import com.awecode.stockapp.R
 import com.awecode.stockapp.view.base.BaseFragment

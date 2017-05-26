@@ -32,7 +32,7 @@ abstract class BaseActivity : AppCompatActivity() {
         if (cleanStack) {
             clearBackStack()
         }
-        ft.replace(R.id.container, fragment)
+        ft.replace(0, fragment)
         if (addToBackStack)
             ft.addToBackStack(null)
         ft.commit()

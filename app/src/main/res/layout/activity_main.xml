@@ -1,85 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.awecode.stockapp.MainActivity">
 
 
-    <LinearLayout
+    <include layout="@layout/toolbar_home" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomBtnTabLayout"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white" />
 
-        <include layout="@layout/toolbar_home" />
-
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/bottomBtnTabLayout"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/slidingTabs"
+        app:tabGravity="fill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:padding="5dp"
-        android:weightSum="4">
+        app:tabMode="fixed" />
 
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/marketsButton"
-                style="@style/HomeBottomBtnStyle"
-                android:drawableTop="@drawable/selector_market_image"
-                android:text="@string/markets" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/newsButton"
-                style="@style/HomeBottomBtnStyle"
-                android:drawableTop="@drawable/selector_market_image"
-                android:text="News" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/calendarButton"
-                style="@style/HomeBottomBtnStyle"
-                android:drawableTop="@drawable/selector_market_image"
-                android:text="Calendar" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/portfolioButton"
-                style="@style/HomeBottomBtnStyle"
-                android:drawableTop="@drawable/selector_market_image"
-                android:text="Portfolio" />
-
-        </LinearLayout>
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

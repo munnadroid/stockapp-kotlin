@@ -1,4 +1,4 @@
-package com.awecode.stockapp.view.home.market
+package com.awecode.stockapp.view.market
 
 import android.os.Bundle
 import android.support.v4.view.ViewPager
