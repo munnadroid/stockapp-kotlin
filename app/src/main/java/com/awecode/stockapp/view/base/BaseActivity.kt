@@ -1,12 +1,11 @@
 package com.awecode.stockapp.view.base
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
-import com.awecode.stockapp.R
+import org.jetbrains.anko.toast
 
 /**
  * Created by munnadroid on 5/23/17.
