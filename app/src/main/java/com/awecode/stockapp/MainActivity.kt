@@ -3,7 +3,7 @@ package com.awecode.stockapp
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import com.awecode.stockapp.util.changeIconColor
-import com.awecode.stockapp.util.view.ViewPagerIconAdapter
+import com.awecode.stockapp.util.view.ViewPagerAdapter
 import com.awecode.stockapp.view.base.BaseActivity
 import com.awecode.stockapp.view.market.MarketFragment
 import com.awecode.stockapp.view.news.NewsFragment
@@ -17,7 +17,6 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
-        //changeFragment(MarketFragment.newInstance(), true, false)
 
         setupViewPager()
     }
@@ -26,12 +25,12 @@ class MainActivity : BaseActivity() {
      * setup market viewpager
      */
     private fun setupViewPager() {
-        val pagerAdapter = ViewPagerIconAdapter(supportFragmentManager, this)
+        val pagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
-        pagerAdapter.addFragment(MarketFragment.newInstance(), "Market", R.drawable.ic_graphic_eq_white_24dp)
-        pagerAdapter.addFragment(NewsFragment.newInstance(), "News", R.drawable.ic_graphic_eq_white_24dp)
-        pagerAdapter.addFragment(NewsFragment.newInstance(), "Calendar", R.drawable.ic_graphic_eq_white_24dp)
-        pagerAdapter.addFragment(NewsFragment.newInstance(), "Portfolio", R.drawable.ic_graphic_eq_white_24dp)
+        pagerAdapter.addFragment(MarketFragment.newInstance(), "Market")
+        pagerAdapter.addFragment(NewsFragment.newInstance(), "News")
+        pagerAdapter.addFragment(NewsFragment.newInstance(), "Calendar")
+        pagerAdapter.addFragment(NewsFragment.newInstance(), "Portfolio")
 
 
         viewPager.adapter = pagerAdapter
