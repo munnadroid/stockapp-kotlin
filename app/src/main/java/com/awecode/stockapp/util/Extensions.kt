@@ -23,7 +23,7 @@ fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View {
 }
 
 
-fun TabLayout.changeIconColor(theme: Resources.Theme, slidingTabs: TabLayout, color: Int): Unit {
+fun TabLayout.changeTabIconColor(theme: Resources.Theme, slidingTabs: TabLayout, color: Int): Unit {
     val colors: ColorStateList
     if (Build.VERSION.SDK_INT >= 23) {
         colors = resources.getColorStateList(color, theme)

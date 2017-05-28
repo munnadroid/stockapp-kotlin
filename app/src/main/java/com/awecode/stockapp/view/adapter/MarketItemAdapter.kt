@@ -31,7 +31,7 @@ class MarketItemAdapter(val indicesList: List<Indices>, val itemClick: (Indices)
 
         fun bindForecast(indice: Indices) {
             with(indice) {
-                itemView.textView.text = indice.name
+                itemView.nameTextView.text = indice.name
                 itemView.setOnClickListener { itemClick(this) }
             }
         }

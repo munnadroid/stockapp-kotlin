@@ -2,7 +2,7 @@ package com.awecode.stockapp
 
 import android.os.Bundle
 import android.support.v4.view.ViewPager
-import com.awecode.stockapp.util.changeIconColor
+import com.awecode.stockapp.util.changeTabIconColor
 import com.awecode.stockapp.util.view.ViewPagerAdapter
 import com.awecode.stockapp.view.base.BaseActivity
 import com.awecode.stockapp.view.market.MarketFragment
@@ -49,7 +49,7 @@ class MainActivity : BaseActivity() {
         for (i in 0..tabIcons.size)
             slidingTabs.getTabAt(i)?.setIcon(tabIcons[i])
 
-        slidingTabs.changeIconColor(theme, slidingTabs, R.color.tablayout_icon_color)
+        slidingTabs.changeTabIconColor(theme, slidingTabs, R.color.tablayout_icon_color)
 
     }
 
