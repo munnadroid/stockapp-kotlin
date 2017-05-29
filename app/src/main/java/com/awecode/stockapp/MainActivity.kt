@@ -2,12 +2,13 @@ package com.awecode.stockapp
 
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import com.awecode.stockapp.util.Util
 import com.awecode.stockapp.util.extensions.changeTabIconColor
 import com.awecode.stockapp.util.view.ViewPagerAdapter
 import com.awecode.stockapp.view.base.BaseActivity
 import com.awecode.stockapp.view.market.MarketFragment
-import com.awecode.stockapp.view.tools.ToolsListFragment
 import com.awecode.stockapp.view.news.NewsFragment
+import com.awecode.stockapp.view.tools.ToolsListFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_home.*
 
@@ -18,8 +19,12 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
-
+        setToolbarTitle(getString(R.string.app_name))
         setupViewPager()
+    }
+
+    open fun setToolbarTitle(title: String){
+        Util.setToolbarTitle(toolbar,title)
     }
 
     /**

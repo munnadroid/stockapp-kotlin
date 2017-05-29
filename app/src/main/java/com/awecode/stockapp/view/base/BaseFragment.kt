@@ -19,5 +19,26 @@ abstract class BaseFragment : Fragment() {
 
     abstract val layoutId: Int
 
+    override fun setUserVisibleHint(visible: Boolean) {
+        super.setUserVisibleHint(visible)
+        if (visible && isResumed) {
+            //Only manually call onResume if fragment is already visible
+            //Otherwise allow natural fragment lifecycle to call onResume
+            onResume()
+        }
+    }
 
+    override fun onResume() {
+        super.onResume()
+        if (!userVisibleHint) {
+            return
+        }
+
+        fragmentVisible()
+        //INSERT CUSTOM CODE HERE
+    }
+
+    open fun fragmentVisible() {
+
+    }
 }

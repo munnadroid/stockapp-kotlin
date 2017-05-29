@@ -1,22 +1,30 @@
 package com.awecode.stockapp.util.extensions
 
+import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.Resources
+import android.graphics.PorterDuff
 import android.os.Build
 import android.support.annotation.StyleRes
 import android.support.design.widget.TabLayout
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v4.widget.TextViewCompat
+import android.support.v7.app.ActionBar
 import android.text.Html
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
+import com.awecode.stockapp.R
 import com.awecode.stockapp.model.listener.SingleClickListener
 
 /**
  * Created by munnadroid on 5/24/17.
  */
+
+fun ActionBar.changeDefaultNavIconColor(ctx: Context,color:Int) {
+    val upArrow = ctx.drawableRes(R.drawable.abc_ic_ab_back_material)
+    upArrow.setColorFilter(2, PorterDuff.Mode.SRC_ATOP)
+    setHomeAsUpIndicator(upArrow)
+}
 
 fun TabLayout.changeTabIconColor(theme: Resources.Theme, slidingTabs: TabLayout, color: Int): Unit {
     val colors: ColorStateList

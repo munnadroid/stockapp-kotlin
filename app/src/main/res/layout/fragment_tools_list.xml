@@ -25,5 +25,5 @@
         android:id="@+id/ipoAllotmentBtn"
         style="@style/ToolsBtnStyle"
         android:layout_marginTop="@dimen/tools_btn_margin_top"
-        android:text="IPO Allotment Calculator" />
+        android:text="@string/ipo_allotment_calculator" />
 </LinearLayout>

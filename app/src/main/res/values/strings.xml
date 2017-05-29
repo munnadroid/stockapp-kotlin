@@ -7,4 +7,8 @@
     <string name="tools">Tools</string>
     <string name="share_calculator">Share Calculator</string>
     <string name="ipo_cost_calculator">IPO Cost Calculator</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ipo_allotment_calculator">IPO Allotment Calculator</string>
 </resources>
