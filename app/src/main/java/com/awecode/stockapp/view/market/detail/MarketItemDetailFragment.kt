@@ -32,5 +32,6 @@ class MarketItemDetailFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         textView1.text = mIndice?.name
+
     }
 }

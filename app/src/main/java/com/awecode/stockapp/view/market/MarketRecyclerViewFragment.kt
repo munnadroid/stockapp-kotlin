@@ -50,8 +50,7 @@ class MarketRecyclerViewFragment : BaseFragment() {
             recyclerView.layoutManager = LinearLayoutManager(activity)
             val adapter = MarketItemAdapter(indices) {
                 //start detail view activity
-                //startActivity(MarketItemDetailActivity.newIntent(context, it))
-                activity.launchActivity<MarketItemDetailActivity>{
+                context.launchActivity<MarketItemDetailActivity>{
                     putExtra(MarketItemDetailActivity.INTENT_DATA,it)
                 }
             }
