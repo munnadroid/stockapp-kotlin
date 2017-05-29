@@ -2,4 +2,6 @@
 <resources>
     <dimen name="activity_margin">16dp</dimen>
     <dimen name="indices_item_small_txt_size">10sp</dimen>
+    <dimen name="tools_btn_margin_top">10dp</dimen>
+    <dimen name="tools_btn_txt_size">13sp</dimen>
 </resources>

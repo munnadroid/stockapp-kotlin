@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/view_bg_color"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin">
+
+    <!--share calculator btn-->
+    <Button
+        android:id="@+id/shareCalcBtn"
+        style="@style/ToolsBtnStyle"
+        android:text="@string/share_calculator" />
+
+    <!--ipo cost calculator btn-->
+    <Button
+        android:id="@+id/ipoCostCalcBtn"
+        style="@style/ToolsBtnStyle"
+        android:layout_marginTop="@dimen/tools_btn_margin_top"
+        android:text="@string/ipo_cost_calculator" />
+
+
+    <!--ipo allotment button-->
+    <Button
+        android:id="@+id/ipoAllotmentBtn"
+        style="@style/ToolsBtnStyle"
+        android:layout_marginTop="@dimen/tools_btn_margin_top"
+        android:text="IPO Allotment Calculator" />
+</LinearLayout>

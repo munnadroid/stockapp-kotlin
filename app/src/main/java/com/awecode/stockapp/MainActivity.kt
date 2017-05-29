@@ -6,6 +6,7 @@ import com.awecode.stockapp.util.extensions.changeTabIconColor
 import com.awecode.stockapp.util.view.ViewPagerAdapter
 import com.awecode.stockapp.view.base.BaseActivity
 import com.awecode.stockapp.view.market.MarketFragment
+import com.awecode.stockapp.view.tools.ToolsListFragment
 import com.awecode.stockapp.view.news.NewsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_home.*
@@ -31,7 +32,7 @@ class MainActivity : BaseActivity() {
         pagerAdapter.addFragment(MarketFragment.newInstance(), getString(R.string.markets))
         pagerAdapter.addFragment(NewsFragment.newInstance(), getString(R.string.news))
         pagerAdapter.addFragment(NewsFragment.newInstance(), getString(R.string.calendar))
-        pagerAdapter.addFragment(NewsFragment.newInstance(), getString(R.string.portfolio))
+        pagerAdapter.addFragment(ToolsListFragment.newInstance(), getString(R.string.tools))
 
 
         viewPager.adapter = pagerAdapter

@@ -18,11 +18,6 @@ import com.awecode.stockapp.model.listener.SingleClickListener
  * Created by munnadroid on 5/24/17.
  */
 
-fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View {
-    return LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)
-}
-
-
 fun TabLayout.changeTabIconColor(theme: Resources.Theme, slidingTabs: TabLayout, color: Int): Unit {
     val colors: ColorStateList
     if (Build.VERSION.SDK_INT >= 23) {

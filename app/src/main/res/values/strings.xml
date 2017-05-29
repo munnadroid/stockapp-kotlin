@@ -4,4 +4,7 @@
     <string name="news">News</string>
     <string name="calendar">Calendar</string>
     <string name="portfolio">Portfolio</string>
+    <string name="tools">Tools</string>
+    <string name="share_calculator">Share Calculator</string>
+    <string name="ipo_cost_calculator">IPO Cost Calculator</string>
 </resources>
