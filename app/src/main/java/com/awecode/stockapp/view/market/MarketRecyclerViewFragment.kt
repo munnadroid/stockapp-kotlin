@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.awecode.stockapp.R
+import com.awecode.stockapp.model.Indice
 import com.awecode.stockapp.view.adapter.MarketItemAdapter
 import com.awecode.stockapp.view.base.BaseFragment
-import com.awecode.stockapp.view.model.Indices
+import com.awecode.stockapp.view.market.detail.MarketItemDetailActivity
 import kotlinx.android.synthetic.main.fragment_market_recyclerview.*
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 
 /**
  * Created by munnadroid on 5/23/17.
@@ -38,17 +40,26 @@ class MarketRecyclerViewFragment : BaseFragment() {
         setupListAdapter()
     }
 
-    fun setupListAdapter() {
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-        val adapter = MarketItemAdapter(getDummyList()) {
-            activity.toast("testing click")
+    /**
+     * request api and populate in list in view
+     */
+    fun setupListAdapter() = doAsync {
+        var indices = getDummyList()
+        uiThread {
+            recyclerView.layoutManager = LinearLayoutManager(activity)
+            val adapter = MarketItemAdapter(indices) {
+                //start detail view activity
+                startActivity(MarketItemDetailActivity.newIntent(context, it))
+            }
+            recyclerView.adapter = adapter
         }
-        recyclerView.adapter = adapter
+
     }
 
-    fun getDummyList(): List<Indices> {
-        var indices = ArrayList<Indices>()
-        (0..10).mapTo(indices) { Indices("Dow$it", 2300.0, 1300.0, 4300.0, 5300.0, "23/12/2017", "NEPSE") }
+
+    fun getDummyList(): List<Indice> {
+        var indices = ArrayList<Indice>()
+        (0..10).mapTo(indices) { Indice("Dow$it", 2300.0, 1300.0, 4300.0, 5300.0, "23/12/2017", "NEPSE") }
 
         return indices
     }

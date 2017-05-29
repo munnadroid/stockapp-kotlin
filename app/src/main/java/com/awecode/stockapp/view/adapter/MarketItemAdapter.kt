@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.awecode.stockapp.R
-import com.awecode.stockapp.view.model.Indices
+import com.awecode.stockapp.model.Indice
 import kotlinx.android.synthetic.main.item_indices.view.*
 
 /**
  * Created by munnadroid on 5/26/17.
  */
 
-class MarketItemAdapter(val indicesList: List<Indices>, val itemClick: (Indices) -> Unit) :
+class MarketItemAdapter(val indiceList: List<Indice>, val itemClick: (Indice) -> Unit) :
         RecyclerView.Adapter<MarketItemAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,15 +21,15 @@ class MarketItemAdapter(val indicesList: List<Indices>, val itemClick: (Indices)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindForecast(indicesList[position])
+        holder.bindForecast(indiceList[position])
     }
 
-    override fun getItemCount() = indicesList.size
+    override fun getItemCount() = indiceList.size
 
 
-    class ViewHolder(view: View, val itemClick: (Indices) -> Unit) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, val itemClick: (Indice) -> Unit) : RecyclerView.ViewHolder(view) {
 
-        fun bindForecast(indice: Indices) {
+        fun bindForecast(indice: Indice) {
             with(indice) {
                 itemView.nameTextView.text = indice.name
                 itemView.setOnClickListener { itemClick(this) }

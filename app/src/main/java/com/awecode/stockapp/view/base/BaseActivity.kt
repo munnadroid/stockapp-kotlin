@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import com.awecode.stockapp.R
 import org.jetbrains.anko.toast
 
 /**
@@ -12,11 +13,12 @@ import org.jetbrains.anko.toast
  */
 
 abstract class BaseActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutId)
-
-
     }
 
     abstract val layoutId: Int
@@ -31,7 +33,7 @@ abstract class BaseActivity : AppCompatActivity() {
         if (cleanStack) {
             clearBackStack()
         }
-        ft.replace(0, fragment)
+        ft.replace(R.id.container, fragment)
         if (addToBackStack)
             ft.addToBackStack(null)
         ft.commit()

@@ -39,4 +39,5 @@ dependencies {
 
     //anko
     compile group: "org.jetbrains.anko", name: "anko-common", version: "$anko_version"
+
 }

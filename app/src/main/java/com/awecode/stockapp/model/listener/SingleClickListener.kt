@@ -1,4 +1,4 @@
-package com.awecode.stockapp.model
+package com.awecode.stockapp.model.listener
 
 /**
  * Created by munnadroid on 5/26/17.

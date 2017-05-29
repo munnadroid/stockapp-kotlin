@@ -12,7 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.awecode.stockapp.model.SingleClickListener
+import com.awecode.stockapp.model.listener.SingleClickListener
 
 /**
  * Created by munnadroid on 5/24/17.
