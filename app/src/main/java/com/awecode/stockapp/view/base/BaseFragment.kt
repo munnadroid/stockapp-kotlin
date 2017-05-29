@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.awecode.stockapp.util.inflate
+import com.awecode.stockapp.util.extensions.inflate
 
 /**
  * Created by munnadroid on 5/23/17.

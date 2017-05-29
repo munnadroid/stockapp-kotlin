@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.awecode.stockapp.R
 import com.awecode.stockapp.model.Indice
+import com.awecode.stockapp.util.extensions.launchActivity
 import com.awecode.stockapp.view.adapter.MarketItemAdapter
 import com.awecode.stockapp.view.base.BaseFragment
 import com.awecode.stockapp.view.market.detail.MarketItemDetailActivity
@@ -49,7 +50,10 @@ class MarketRecyclerViewFragment : BaseFragment() {
             recyclerView.layoutManager = LinearLayoutManager(activity)
             val adapter = MarketItemAdapter(indices) {
                 //start detail view activity
-                startActivity(MarketItemDetailActivity.newIntent(context, it))
+                //startActivity(MarketItemDetailActivity.newIntent(context, it))
+                activity.launchActivity<MarketItemDetailActivity>{
+                    putExtra(MarketItemDetailActivity.INTENT_DATA,it)
+                }
             }
             recyclerView.adapter = adapter
         }

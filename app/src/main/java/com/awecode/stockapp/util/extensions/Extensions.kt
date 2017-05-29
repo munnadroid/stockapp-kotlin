@@ -1,4 +1,4 @@
-package com.awecode.stockapp.util
+package com.awecode.stockapp.util.extensions
 
 import android.content.res.ColorStateList
 import android.content.res.Resources
@@ -41,7 +41,7 @@ fun TabLayout.changeTabIconColor(theme: Resources.Theme, slidingTabs: TabLayout,
         }
     }
 
-    fun View.singleClick(l: (android.view.View?) -> Unit) {
+    fun View.singleClick(l: (View?) -> Unit) {
         setOnClickListener(SingleClickListener(l))
     }
 

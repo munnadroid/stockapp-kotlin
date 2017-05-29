@@ -22,7 +22,7 @@ class MarketItemDetailFragment : BaseFragment() {
         }
     }
 
-    private var mIndice: Indice = null!!
+    private var mIndice: Indice? = null
 
     private fun setData(indice: Indice) {
         this.mIndice = indice
@@ -31,6 +31,6 @@ class MarketItemDetailFragment : BaseFragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        textView1.text = mIndice.name
+        textView1.text = mIndice?.name
     }
 }

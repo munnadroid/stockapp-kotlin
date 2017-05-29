@@ -2,7 +2,7 @@ package com.awecode.stockapp
 
 import android.os.Bundle
 import android.support.v4.view.ViewPager
-import com.awecode.stockapp.util.changeTabIconColor
+import com.awecode.stockapp.util.extensions.changeTabIconColor
 import com.awecode.stockapp.util.view.ViewPagerAdapter
 import com.awecode.stockapp.view.base.BaseActivity
 import com.awecode.stockapp.view.market.MarketFragment
