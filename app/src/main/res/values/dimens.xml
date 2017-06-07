@@ -4,4 +4,6 @@
     <dimen name="indices_item_small_txt_size">10sp</dimen>
     <dimen name="tools_btn_margin_top">10dp</dimen>
     <dimen name="tools_btn_txt_size">13sp</dimen>
+    <dimen name="spinner_row_height">32dp</dimen>
+    <dimen name="spinner_dropdown_row_height">48dp</dimen>
 </resources>

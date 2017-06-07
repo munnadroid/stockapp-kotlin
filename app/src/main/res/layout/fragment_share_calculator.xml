@@ -1,12 +1,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/activity_margin"
+    android:orientation="vertical"
     tools:context="com.awecode.stockapp.view.tools.ShareCalculatorFragment">
 
 
-    <TextView
+    <com.rey.material.widget.Spinner
+        android:id="@+id/txnTypeSpinnner"
+        style="@style/LightSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Share Calculator"/>
+        app:spn_label="@string/transaction_type" />
+
+    <include layout="@layout/view_line_horizontal_white" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:hint="Hello" />
 </LinearLayout>

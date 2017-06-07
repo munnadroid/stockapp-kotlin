@@ -13,7 +13,6 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         vectorDrawables.useSupportLibrary = true
 
@@ -28,22 +27,34 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile "com.android.support:appcompat-v7:$supportLibVersion"
     compile "com.android.support:design:$supportLibVersion"
     compile "com.android.support:support-v4:$supportLibVersion"
+    compile "com.android.support:recyclerview-v7:$supportLibVersion"
+    compile "com.android.support:cardview-v7:$supportLibVersion"
 
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     //anko
     compile group: "org.jetbrains.anko", name: "anko-common", version: "$anko_version"
 
     //paperparcel
-    compile 'nz.bradcampbell:paperparcel:2.0.1'
-    compile 'nz.bradcampbell:paperparcel-kotlin:2.0.1' // Optional
-    kapt 'nz.bradcampbell:paperparcel-compiler:2.0.1'
+    compile "nz.bradcampbell:paperparcel:$paperParcelVersion"
+    compile "nz.bradcampbell:paperparcel-kotlin:$paperParcelVersion" // Optional
+    kapt "nz.bradcampbell:paperparcel-compiler:$paperParcelVersion"
+
+    //spinner
+    compile ('com.github.ganfra:material-spinner:1.1.1'){
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
+
+    //material
+    compile ('com.github.rey5137:material:1.2.4'){
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+        exclude group: 'com.android.support', module: 'cardview-v7'
+    }
 }
