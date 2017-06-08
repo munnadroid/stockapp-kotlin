@@ -13,4 +13,6 @@
     <string name="ipo_allotment_calculator">IPO Allotment Calculator</string>
     <string name="type_spinner_hint">Select Transaction Type</string>
     <string name="transaction_type">Transaction Type</string>
+    <string name="share_quantity">Share Quantity</string>
+    <string name="purchase_price">Purchase Price</string>
 </resources>

@@ -10,17 +10,34 @@ import android.support.design.widget.TabLayout
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v4.widget.TextViewCompat
 import android.support.v7.app.ActionBar
+import android.text.Editable
 import android.text.Html
+import android.text.TextWatcher
 import android.view.View
 import android.widget.TextView
 import com.awecode.stockapp.R
 import com.awecode.stockapp.model.listener.SingleClickListener
+import com.rey.material.widget.EditText
 
 /**
  * Created by munnadroid on 5/24/17.
  */
+fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+    this.addTextChangedListener(object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        }
 
-fun ActionBar.changeDefaultNavIconColor(ctx: Context,color:Int) {
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        }
+
+        override fun afterTextChanged(editable: Editable?) {
+            afterTextChanged.invoke(editable.toString())
+        }
+    })
+}
+
+
+fun ActionBar.changeDefaultNavIconColor(ctx: Context, color: Int) {
     val upArrow = ctx.drawableRes(R.drawable.abc_ic_ab_back_material)
     upArrow.setColorFilter(2, PorterDuff.Mode.SRC_ATOP)
     setHomeAsUpIndicator(upArrow)
