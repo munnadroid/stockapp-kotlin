@@ -65,4 +65,7 @@ dependencies {
 
     //rxbindings
     compile 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.0.0'
+
+    //toast
+    compile 'com.github.GrenderG:Toasty:1.2.5'
 }

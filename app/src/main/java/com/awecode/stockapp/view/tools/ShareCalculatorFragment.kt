@@ -1,17 +1,24 @@
 package com.awecode.stockapp.view.tools
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.ArrayAdapter
 import com.awecode.stockapp.R
+import com.awecode.stockapp.model.ShareItem
+import com.awecode.stockapp.util.CalculationUtil
 import com.awecode.stockapp.util.Util.Companion.parseDouble
 import com.awecode.stockapp.util.Util.Companion.parseInt
+import com.awecode.stockapp.view.adapter.ShareCalculationListAdapter
 import com.awecode.stockapp.view.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_share_calculator.*
 import kotlinx.android.synthetic.main.layout_share_buy.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class ShareCalculatorFragment : BaseFragment() {
@@ -33,15 +40,37 @@ class ShareCalculatorFragment : BaseFragment() {
 
     private fun calculateTotalAmount(quantity: Int, perSharePrice: Double) {
 
-        var totalAmount = quantity * perSharePrice
+        val totalAmount = quantity * perSharePrice
         if (totalAmount == 0.0) {
-            totalTextView.visibility = View.GONE
+            recyclerView.visibility = View.GONE
             return
         }
-        totalTextView.visibility = View.VISIBLE
+        recyclerView.visibility = View.VISIBLE
 
+        val commissionAmount = CalculationUtil.brokerCommission(totalAmount)
+        val sebonFee = CalculationUtil.sebonFee(totalAmount)
+        val dpCharge = 25.0 //sadhai ehi huncha
+        var totalPayableAmount = totalAmount + commissionAmount + sebonFee + dpCharge
+        val costPricePerShare = totalPayableAmount / (shareQuantityEditText.text.toString().toInt())
 
-        totalTextView.text = "Total Amount Rs $totalAmount"
+        setupListAdapter(ArrayList<ShareItem>().apply {
+            add(ShareItem("Total Amount", totalAmount))
+            add(ShareItem("Commission", commissionAmount))
+            add(ShareItem("SEBON Fee", sebonFee))
+            add(ShareItem("DP Charge", dpCharge))
+            add(ShareItem("Price Per Share", costPricePerShare))
+            add(ShareItem("Total Payable Amount", totalPayableAmount))
+        })
+    }
+
+    fun setupListAdapter(dataList: ArrayList<ShareItem>) = doAsync {
+        uiThread {
+            recyclerView.layoutManager = LinearLayoutManager(activity)
+            val adapter = ShareCalculationListAdapter(dataList) {
+            }
+            recyclerView.adapter = adapter
+        }
+
     }
 
     private fun checkValues() {

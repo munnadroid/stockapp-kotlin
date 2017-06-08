@@ -13,6 +13,6 @@ data class Indice(val name: String = "", val finalPrice: Double, val increaseInP
     companion object {
         @JvmField val CREATOR = PaperParcelIndice.CREATOR
     }
-
-
 }
+
+data class ShareItem(val label: String, val amount: Double)

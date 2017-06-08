@@ -6,4 +6,5 @@
     <dimen name="tools_btn_txt_size">13sp</dimen>
     <dimen name="spinner_row_height">32dp</dimen>
     <dimen name="spinner_dropdown_row_height">48dp</dimen>
+    <dimen name="item_share_calc_txt_size">13sp</dimen>
 </resources>
