@@ -6,7 +6,8 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.ArrayAdapter
 import com.awecode.stockapp.R
-import com.awecode.stockapp.util.extensions.toast
+import com.awecode.stockapp.util.Util.Companion.parseDouble
+import com.awecode.stockapp.util.Util.Companion.parseInt
 import com.awecode.stockapp.view.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_share_calculator.*
 import kotlinx.android.synthetic.main.layout_share_buy.*
@@ -30,6 +31,37 @@ class ShareCalculatorFragment : BaseFragment() {
         setupQuantityTextWatcher()
     }
 
+    private fun calculateTotalAmount(quantity: Int, perSharePrice: Double) {
+
+        var totalAmount = quantity * perSharePrice
+        if (totalAmount == 0.0) {
+            totalTextView.visibility = View.GONE
+            return
+        }
+        totalTextView.visibility = View.VISIBLE
+
+
+        totalTextView.text = "Total Amount Rs $totalAmount"
+    }
+
+    private fun checkValues() {
+        try {
+
+            var quantity = parseInt(shareQuantityEditText.text.toString())
+            var price = parseDouble(sharePriceEditText.text.toString())
+
+            if (quantity == null)
+                quantity = 0
+            if (price == null)
+                price = 0.0
+
+            calculateTotalAmount(quantity, price)
+        } catch(e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+
     /**
      * setup share quantity textwatcher
      */
@@ -47,7 +79,7 @@ class ShareCalculatorFragment : BaseFragment() {
                 timer!!.schedule(object : TimerTask() {
                     override fun run() {
                         activity.runOnUiThread {
-                            toast("testing " + shareQuantityEditText.text)
+                            checkValues()
                         }
                     }
                 }, 1000)
@@ -73,7 +105,7 @@ class ShareCalculatorFragment : BaseFragment() {
                 timer!!.schedule(object : TimerTask() {
                     override fun run() {
                         activity.runOnUiThread {
-                            toast("testing " + sharePriceEditText.text)
+                            checkValues()
                         }
                     }
                 }, 1000)
