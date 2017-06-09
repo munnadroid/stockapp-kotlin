@@ -11,7 +11,7 @@ import com.awecode.stockapp.model.ShareItem
 import com.awecode.stockapp.util.CalculationUtil
 import com.awecode.stockapp.util.Util.Companion.parseDouble
 import com.awecode.stockapp.util.Util.Companion.parseInt
-import com.awecode.stockapp.view.adapter.ShareCalculationListAdapter
+import com.awecode.stockapp.view.adapter.ShareCalcListAdapter
 import com.awecode.stockapp.view.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_share_calculator.*
 import kotlinx.android.synthetic.main.layout_share_buy.*
@@ -66,7 +66,7 @@ class ShareCalculatorFragment : BaseFragment() {
     fun setupListAdapter(dataList: ArrayList<ShareItem>) = doAsync {
         uiThread {
             recyclerView.layoutManager = LinearLayoutManager(activity)
-            val adapter = ShareCalculationListAdapter(dataList) {
+            val adapter = ShareCalcListAdapter(dataList) {
             }
             recyclerView.adapter = adapter
         }
