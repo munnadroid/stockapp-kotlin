@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.item_share_calculation.view.*
  * Created by munnadroid on 5/26/17.
  */
 
-class ShareCalculationListAdapter(val dataList: List<ShareItem>, val itemClick: (ShareItem) -> Unit) :
-        RecyclerView.Adapter<ShareCalculationListAdapter.ViewHolder>() {
+class ShareCalcListAdapter(val dataList: List<ShareItem>, val itemClick: (ShareItem) -> Unit) :
+        RecyclerView.Adapter<ShareCalcListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_share_calculation, parent, false)
